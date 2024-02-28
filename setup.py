@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from pip._internal.req import parse_requirements
 from setuptools import setup, find_packages
 
 
-requirements = [
-    parsed_requirement.requirement
-    for parsed_requirement
-    in parse_requirements('requirements.txt', session='workaround')
-]
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
 
 
 setup(
